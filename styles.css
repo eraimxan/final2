@@ -1,0 +1,241 @@
+/* Base Styling */
+body {
+    font-family: 'Roboto', sans-serif; 
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light and Dark Mode Variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #0d6efd;
+    --primary-hover-color: #0056b3;
+    --modal-bg-color: #ffffff;
+    --card-bg-color: #f8f9fa;
+    --card-border-color: #e0e0e0;
+    --button-bg-color: #007bff;
+    --button-hover-bg-color: #0056b3;
+    --link-color: #007bff;
+    --footer-bg-color: #343a40;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #bb86fc;
+    --primary-hover-color: #9b6cfc;
+    --modal-bg-color: #2c2c2c;
+    --card-bg-color: #333333;
+    --card-border-color: #444444;
+    --button-bg-color: #6200ee;
+    --button-hover-bg-color: #3700b3;
+    --link-color: #bb86fc;
+    --footer-bg-color: #1d1d1d;
+}
+
+/* Global Styles */
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    color: var(--text-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--text-color);
+    padding: 10px 0;
+}
+
+/* Buttons */
+button {
+    background-color: var(--button-bg-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    border: 1px solid var(--card-border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: var(--modal-bg-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-header .btn-close {
+    color: white;
+}
+
+/* Smooth transition for theme change */
+body, button, .card, .modal-content {
+    transition: all 0.3s ease;
+}
+
+/* Article Content in Modal */
+.modal-body img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-body p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Header Title */
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Article Card Body */
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+small {
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background-color: var(--primary-color);
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    z-index: 10; /* Ensure the button stays on top */
+}
+
+/* Hover effect */
+#theme-toggle:hover {
+    background-color: var(--primary-hover-color);
+    transform: scale(1.1);
+    color: var(--bg-color);
+}
+
+/* Focus effect */
+#theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+
+/* For devices larger than 576px */
+@media (min-width: 576px) {
+    #theme-toggle {
+        font-size: 16px; /* Default font size for tablets and larger devices */
+        padding: 12px 24px; /* Standard padding */
+    }
+}
+
+/* For devices with widths smaller than 576px */
+@media (max-width: 575px) {
+    #theme-toggle {
+        font-size: 14px; /* Slightly smaller font size for mobile screens */
+        padding: 10px 20px; /* Reduced padding for mobile screens */
+    }
+}
+
+
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin-bottom: 10px;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+  
+}
